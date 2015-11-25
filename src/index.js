@@ -1,6 +1,8 @@
 'use strict';
 // require
+Object.keys(require.cache).forEach((path) => /aws\-sdk/.test(path) && delete(require.cache[path]));
 var AWS    = require('aws-sdk');
+Object.keys(require.cache).forEach((path) => /aws\-sdk/.test(path) && delete(require.cache[path]));
 var extend = require('util')._extend;
 // initialize
 var responses = {};
